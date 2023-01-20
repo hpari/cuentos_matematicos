@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>TITULO</title>
+  <script type="text/javascript" src="lib/descartes-min.js" charset="utf-8"></script>
+</head>
+
+<body style="padding:0; margin:0; background:#eff0f1;">
+
+  <div align="center">
+    <ajs name="Descartes" code="Descartes" width="650" height="550">
+      <param name="tamaño" value="650x550">
+      <param name="decimal_symbol" value=".">
+      <param name="expand" value="fit">
+      <param name="nombre" value="">
+      <param name="Versión" value="5.5">
+      <param name="editable" value="no">
+      <param name="Idioma" value="español">
+      <param name="Botones" value="créditos=no config=no inicio=no limpiar=no filas_norte=0 filas_sur=0 ancho_este=150 ancho_oeste=150 alto=40 ">
+      <param name="E_01" value="tipo='R2' id='E1' ancho='100%' alto='100%' fijo='sí' despl_imagen='expand.' fondo='551f00' red='no' red10='no' ejes='no' border_width='3' border_color='ff7100' border_radius='12' ">
+      <param name="E_02" value="tipo='R2' id='imagenes' x='8%' y='12%' ancho='84%' alto='84%' fijo='sí' fondo='000000' red='no' red10='no' ejes='no' border_width='4' border_color='ff7100' border_radius='12' ">
+      <param name="C_01" value="id='b1' interfaz='botón' tipo='numérico' región='interior' espacio='E1' nombre='>' expresión='((E1._w-45),(E1._h-35)/2,35,35)' color='ffffff' color-int='ff7100' fuente puntos='22' acción='calcular' parámetro='k=k+1' dibujar-si='k<N' extra_style='borderRadius=18|overColor=ca2|flat=1' ">
+      <param name="C_02" value="id='b2' interfaz='botón' tipo='numérico' región='interior' espacio='E1' nombre='<' expresión='(10,(E1._h-35)/2,35,35)' color='ffffff' color-int='ff7100' fuente puntos='22' acción='calcular' parámetro='k=k-1' dibujar-si='k>1' extra_style='borderRadius=18|overColor=ca2|flat=1' ">
+      <param name="A_01" value="id='img' vector='sí' evaluar='una-sola-vez' tamaño='15' expresión='img[0]=0;img[1]=&squot;imagenes/1.jpg&squot;;img[2]=&squot;imagenes/2.jpg&squot;;img[3]=&squot;imagenes/3.jpg&squot;;img[4]=&squot;imagenes/4.jpg&squot;;img[5]=&squot;imagenes/5.jpg&squot;;img[6]=&squot;imagenes/6.jpg&squot;;img[7]=&squot;imagenes/7.jpg&squot;;img[8]=&squot;imagenes/8.jpg&squot;;img[9]=&squot;imagenes/9.jpg&squot;;img[10]=&squot;imagenes/10.jpg&squot;;img[11]=&squot;imagenes/11.jpg&squot;;img[12]=&squot;imagenes/12.jpg&squot;;' tipo='vector' ">
+      <param name="A_02" value="id='X' vector='sí' evaluar='una-sola-vez' tamaño='3' expresión='X[0]=0;X[1]=0.9;X[2]=0.9;X[3]=0.9;X[4]=0.9;X[5]=0.9;X[6]=0.9;X[7]=0.9;X[8]=0.9;X[9]=0.9;X[10]=1;X[11]=0.9;X[12]=0.9' tipo='vector' ">
+      <param name="A_03" value="id='Y' vector='sí' evaluar='una-sola-vez' tamaño='3' expresión='Y[0]=0;Y[1]=0.9;Y[2]=0.9;Y[3]=0.9;Y[4]=0.9;Y[5]=0.9;Y[6]=0.9;Y[7]=0.9;Y[8]=0.9;Y[9]=0.9;Y[10]=1;Y[11]=0.9;Y[12]=0.9' tipo='vector' ">
+      <param name="A_04" value="id='N' vector='sí' evaluar='una-sola-vez' tamaño='3' expresión='N[0]=0;N[1]=0;N[2]=0' archivo='textos/N.txt' tipo='vector' ">
+      <param name="A_05" value="id='T' vector='sí' evaluar='una-sola-vez' tamaño='3' expresión='T[0]=0;T[1]=0;T[2]=0' archivo='textos/T.txt' tipo='vector' ">
+      <param name="A_06" value="id='INICIO' algoritmo='sí' evaluar='una-sola-vez' hacer='k=1;N=N[1]' ">
+      <param name="A_07" value="id='CALCULOS' algoritmo='sí' evaluar='siempre' ">
+      <param name="G_01" value="espacio='imagenes' tipo='imagen' coord_abs='no' expresión='(0,0,X[k],Y[k])' archivo='img[k]' ">
+      <param name="G_02" value="espacio='E1' tipo='texto' color='ffffff' coord_abs='no' expresión='(0,E1._h/(2*E1.escala))' texto='[T[k]]' ancho='1' fuente puntos='24' align='a_center' anchor='a_top_center' shadowColor='000000' shadowBlur='2' shadowOffsetX='3' shadowOffsetY='3' ">
+    </ajs>
+  </div>
+
+<script type="descartes/vectorFile" id="textos/N.txt">
+'Número de imágenes'
+	8
+</script>
+
+<script type="descartes/vectorFile" id="textos/T.txt">
+'Títulos imágenes'
+	'Araña de Jardín Europea (Araneus diadematus)\nPor Josh Boe'
+	'Arañas Tejedoras de Jardín (género Argiope)\nPor Rodrigo Dios'
+	'Argiope versicolor\nPor marcel-silvius'
+	'Araña Seda de Oro Gigante (Nephila pilipes)\nPor Pandu Ilmi Prastyanto'
+	'Argiope keyserlingi\nPor  gdaylife'
+	'Novaranea queribunda\nPor Bryce Williamson'
+	'Araña Tejedora Espinosa (Gasteracantha cancriformis)\n Bodo Nuñez Oberg'
+	'Araña Punta de Flecha (Micrathena sagittata)\nPor Dave Eib'
+	
+</script>
+
+</body>
+</html>

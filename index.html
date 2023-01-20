@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=yes,minimal-ui">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<title>CuentosMate</title>
+
+	<!-- configuración del libro -->
+	<script>
+	window.book_config = {
+    // parámetro que indica si los capítulos, secciones y figura se auto numeran
+    // para que los capítulos se auto numeren deben utilizar la etiqueta <h1>
+    // para que las secciones se auto numeren deben utilizar la etiqueta <h2>
+    auto_numerate_sections_and_figures: true, 
+	}
+	</script>
+
+	<!-- núcleo del libro interactivo, se sugiere no intervenir para evitar problemas con futuras actualizaciones -->
+	<link rel="stylesheet" href="book/css/style.css" type="text/css">
+	<script type="text/javascript" src="book/js/book.js" charset="utf-8"></script>
+  
+	<!-- personalización del usuario -->
+	<link rel="stylesheet" href="extra/fonts.css" type="text/css">
+	<link rel="stylesheet" href="extra/style.css" type="text/css">
+	<link rel="stylesheet" href="extra/mis_estilos.css" type="text/css">
+	
+	<!-- inclusión de la biblioteca KaTex, para los libros de matemáticas, física, etc. -->
+	<link rel="stylesheet" type="text/css" href="extra/katex/katex.min.css"/>
+	<script src="extra/katex/katex.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="extra/katex/copy-tex.min.css"/>
+	<script src="extra/katex/copy-tex.min.js"></script>
+	<script src="extra/katex/auto-render.min.js" ></script>
+
+	<!-- Opcional en caso de requerir formulas químicas -->
+	<script src="extra/katex/mhchem.min.js"></script>
+  
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+		renderMathInElement(document.body, {
+		delimiters: [ {left: "$$", right: "$$", display: true}, {left: "$", right: "$", display: false}, {left: "\\[", right: "\\]", display: true}, {left: "\\(", right: "\\)", display: false} ]
+		});
+		});
+	</script>
+	
+
+</head>
+
+<body>
+	<div id="book_loader_container"><div id="book_loader"></div></div>
+
+	<div id="book_container">
+    <div id="btn_back_page"></div>
+    <div id="btn_next_page"></div>
+    <button id="go_to_table_of_content"></button>
+    
+    <button id="btn_config"></button>
+    <div id="config_options">
+		<div id="dark_light_mode"></div>
+		<!-- Botón para la herramienta calculadora-->
+
+    </div>
+
+    <!-- si este elemento no esta presente, el botón de la tabla de contenido lleva a la primera página con un elemento class="toc_link" -->
+    <div id="table_of_content"></div>
+
+    <div id="pages_container">
+	
+    <!-- Página izquierda transparente, antes de la portada -->
+    <div class="page" num=""  style="background-color:transparent;">
+    </div>
+
+    <!-- Portada -->
+    <div class="page invertcolor" num=""  style="margin:0; padding:0; background-size:contain; background-image:url(images/general/portada.svg);">
+		<!-- Imagen de portada -->
+		<div style="width:582px; height:582px;   background-image:url('(images/general/portada1.jpg)'); background-size:582px 582px; position: absolute; left: 58px;">
+		</div>
+		
+		<div style="position:absolute; left:58px; width:582px; height:582px;  background-image:url('images/general/portada.jpg'); background-size:582px 582px; background-position:0px 0px;"></div>
+        <div class="cover_title" style="color:black">CUENTOS MATEMÁTICOS
+		</div>
+		
+          		
+    </div>
+
+   
+
+      <!--  -->
+    <div class="page" num=""  >
+      <p> Título de la obra: <br>
+        CUENTOS MATEMÁTICOS</p>
+      <br>
+      <p> Autor: <br>
+        Inteligencia artificial (IA)
+		
+		
+		<p> Diseño: <br>
+        Hugo Pari Silva Santisteban
+		</p>
+      <br>
+     
+      <p>
+        Código JavaScript para el libro: <a href="https://github.com/jlongi/libro_interactivo" target="_blank">Joel Espinosa Longi</a>, <a href="https://www.matem.unam.mx/" target="_blank">IMATE</a>, UNAM. <br>
+        Recursos interactivos: <a href="http://descartes.matem.unam.mx/" target="_blank">DescartesJS</a> <br>
+        Fuentes: <a href="https://fonts.google.com/specimen/Lato" target="_blank">Lato</a> y <a href="https://fonts.google.com/specimen/Ubuntu+Mono" target="_blank">UbuntuMono</a> <br>
+		Imagen portada: <a href="https://www.youtube.com/watch?v=11vLl5mwdek" target="_blank">Tarantula Collective</a></p>
+      <br>
+      <p><br>
+        Red Educativa Digital Descartes<br>
+        Córdoba (España) <br>
+        <a href="mailto:descartes@proyectodescartes.org?Subject=Fondo editorial"> descartes@proyectodescartes.org</a><br>
+        <a href="https://proyectodescartes.org/descartescms/" target="_blank">https://proyectodescartes.org</a><br>
+        <br>
+        Proyecto iCartesiLibri<br>
+        <a href="https://proyectodescartes.org/iCartesiLibri/index.htm" target="_blank">https://proyectodescartes.org/iCartesiLibri/index.htm</a> <br>
+        <br>
+        ISBN: 978-84-18834-60-8<br>
+      </p>
+      <p style="font-size:10px; position: absolute; bottom: 30px; left: 50px; right:0;"><a href="http://creativecommons.org/licenses/by-nc-sa/4.0" target="_blank"><img src="images/general/88x31.png" style="height:36px; width:99px" /></a><br>
+        Esta obra está bajo una licencia Creative Commons 4.0 internacional: Reconocimiento-No Comercial-Compartir Igual.</p>
+    </div>
+
+      <!--  -->
+      <div class="page" init-page-num="true" num="" >
+        <br><br><h2><center>Tabla de contenido</center></h2><br>
+
+        <!-- con esto se agrega una entrada en la tabla de contenido,
+        href="#prefacio" indica una referencia a una elemento html con 
+        el parámetro id="prefacio", automáticamente se busca está referencia
+        y se agrega el título correspondiente y la página donde se encuentra -->
+          
+        <div class="toc_link" href="#prefacio"></div>
+		<br>
+		<br>
+		<div class="toc_link" href="#c12"></div>
+		<br><br>
+		<div class="toc_link" href="#c13"></div>
+		<br><br>
+		<div class="toc_link" href="#c14"></div>
+		<br><br>
+		<div class="toc_link" href="#c15"></div>
+		<br><br>
+		<div class="toc_link" href="#c16"></div>
+		<br><br>
+		<div class="toc_link" href="#c17"></div>
+		<br>
+		<div class="toc_link" href="#conclusion"></div>
+		
+		
+				
+      </div>
+
+      
+	  
+      
+ <div class="page" num=""  style="display:flex; align-items:center; justify-content:center;">
+		<img style="width:80%" src="images/general/img0.jpeg" width="100%">
+    </div>
+	    
+
+      <!-- num-type-arabic="true" es un parámetro que indica que a partir de esta página la numeración utilizara numerales arábigos -->
+      <!-- Prefacio -->
+      <div class="page" num="" num-type-arabic="true"  >
+        <h1 id="prefacio"><center>Prefacio</center></h1>
+       <p style="font-size:21px"><b><i>Esperamos que este libro de cuentos matemáticos le brinde una nueva perspectiva sobre las matemáticas, y cómo estas pueden ser tan emocionantes e inspiradoras como cualquier otra forma de historia. <br>
+	   Aquí encontrará cuentos sobre los logros y desafíos de grandes matemáticos, cada uno de ellos contribuyendo con sus aportes al avance de esta disciplina. Además, estos cuentos también ilustran la belleza y la emoción de las matemáticas, y cómo estas pueden ser accesibles y significativas para todos, no solo para los expertos en la materia.<br>
+	   Esperamos que este libro sea una fuente de inspiración y entretenimiento para todos los amantes de las matemáticas, y una invitación para aquellos que aún no han descubierto el encanto de esta disciplina.
+	   <br>
+	   Además, el aprendizaje de las matemáticas desarrolla habilidades valiosas como el pensamiento lógico, la resolución de problemas y la capacidad de analizar y comprender la información. Estas habilidades son esenciales para el éxito en cualquier carrera y en la vida en general.<br>
+	   En resumen, aprender matemáticas es importante no solo para comprender y mejorar el mundo, sino también para desarrollar habilidades valiosas que son esenciales para el éxito en cualquier campo. Este libro de cuentos matemáticos es una oportunidad para descubrir la emoción y la importancia de las matemáticas, y para apreciar el papel de los grandes pensadores matemáticos en nuestra historia.</i></b></p>
+		
+
+      </div>
+
+      
+
+    <!-- 4 -->
+    <div class="page" style="font-size:30px">
+		<h2 id="c12"><center>¡La divertida aventura de las ecuaciones matemáticas!</center> </h2>
+		<p>Había una vez un joven estudiante llamado Juan, quien estaba teniendo dificultades con las ecuaciones matemáticas. Se sentía abrumado y desanimado cada vez que tenía que resolver un problema.</p>
+		<div class="flota_d" ><img class="image_expand" onclick="openImage(this)" src="images/c1/1.jpeg" width="80%"></div>
+		<p>Sin embargo, un día, mientras caminaba por el parque, se encontró con un anciano sabio que le ofreció ayudarlo a entender las ecuaciones de una manera divertida.</p>	
+	
+    </div>	
+	
+    <!-- 5 -->
+    <div class="page"style="font-size:28px"  >
+	<div class="flota_d"><img class="image_expand" onclick="openImage(this)" src="images/c1/3.jpeg" width="80%"></div>
+		<p>El anciano le contó a Juan una historia sobre un rey que vivía en un castillo rodeado de un gran laberinto. El rey estaba en posesión de un tesoro valioso, pero para llegar a él, uno debía resolver una serie de ecuaciones matemáticas. Juan estaba emocionado y aceptó el desafío.</p>
+		
+		<p>Juan comenzó a recorrer el laberinto y en cada esquina encontraba una nueva ecuación para resolver. A medida que avanzaba, las ecuaciones se volvían cada vez más difíciles, pero con la ayuda del anciano, Juan aprendió a pensar de manera creativa y a ver las ecuaciones como un juego en lugar de una tarea aburrida.</p>
+	
+    </div>
+
+    <!-- 6 -->
+    <div class="page" style="font-size:34px" >
+		
+		<div class="flota_d"><img class="image_expand" onclick="openImage(this)" src="images/c1/4.jpeg" width="100%"></div>
+		<p>Finalmente, Juan llegó al centro del laberinto y resolvió la ecuación final, lo que le permitió acceder al tesoro del rey. Era una gran cantidad de conocimiento y habilidades matemáticas, y Juan estaba agradecido y emocionado de haberlo encontrado. A partir de ese día, Juan ya no temía a las ecuaciones matemáticas y comenzó a disfrutar resolviéndolas.</p>		
+		
+	
+    </div>
+
+    <!-- 7 -->
+    <div class="page" style="font-size:24px" >
+		<div class="flota_d"><img class="image_expand" onclick="openImage(this)" src="images/c1/2.jpeg" width="60%"></div>
+		<p>La historia termina con Juan regresando a su vida cotidiana, con una gran sonrisa en su rostro, sabiendo que con esfuerzo y dedicación puede alcanzar cualquier cosa que se proponga.</p>
+		
+		<p style="font-size:24px;" ><center><b>¿Cómo se resuelven las Ecuaciones?</b></center></p>
+		<figure>
+        <div class="interactive" poster="posters/p19.png" width="900" height="540" scale="100%" src="interactivos/C1/ecuaciones/index.html"></div>
+            <figcaption prefix="Video">Ecuaciones (Crédito video: Canal <a target="_blank" href="https://youtu.be/Nms0gVS1GgU">Aula 365</a> de YouTube, Licencia Creative Commons).</figcaption>
+        </figure>
+	
+    </div>
+
+
+<!-- 8 -->
+    <div class="page" style="font-size:27px">
+		<h2 id="c13"><center>La heroína matemática: La batalla por salvar el mundo</center> </h2>
+		
+		<div class="flota_d" ><img class="image_expand" onclick="openImage(this)" src="images/c2/1.jpeg" width="95%"></div>
+		<p>Había una vez una niña llamada Ana, que vivía en un pequeño pueblo rodeado de montañas y bosques. Ana era muy inteligente y le encantaba aprender sobre las matemáticas. A menudo pasaba horas estudiando y resolviendo problemas matemáticos en su libro de texto.</p>
+		
+		<p>Un día, mientras caminaba por el bosque, Ana se topó con un extraño dispositivo metálico. Al examinarlo más de cerca, se dio cuenta de que era una especie de máquina del tiempo. Sin pensarlo dos veces, decidió activarlo.</p>	
+	
+    </div>	
+
+
+<!-- 9 -->
+    <div class="page"style="font-size:30px"  >
+	
+		<p>De repente, Ana se encontró en un futuro imaginario en el que el mundo estaba siendo amenazado por una invasión alienígena. Los extraterrestres estaban utilizando un arma de destrucción masiva que podía destruir ciudades enteras con solo un disparo.</p>
+		
+		<div class="flota_d"><img class="image_expand" onclick="openImage(this)" src="images/c2/2.jpeg" width="100%"></div>
+		<p>Ana se dio cuenta de que la única manera de salvar el mundo era desactivar la arma alienígena. Sin embargo, para hacerlo, tendría que resolver una serie de problemas matemáticos extremadamente difíciles.</p>
+	
+    </div>
+
+<!-- 10 -->
+    <div class="page" style="font-size:28px" >
+		
+		<div class="flota_d"><img class="image_expand" onclick="openImage(this)" src="images/c2/3.jpeg" width="100%"></div>
+		<p>Con determinación, Ana comenzó a trabajar en los problemas uno por uno, utilizando sus habilidades matemáticas para resolverlos. Primero tuvo que utilizar la suma para desbloquear una serie de cerraduras numéricas. Luego, utilizó la resta para desactivar un sistema de seguridad. Utilizó la multiplicación para desbloquear una puerta y finalmente utilizó la división para desactivar la arma alienígena.</p>
+		<p>Con éxito, Ana logró desactivar la arma alienígena y salvar al mundo. Los extraterrestres, sorprendidos por su habilidad matemática, huyeron a su planeta de origen.</p>
+
+</div>
+
+
+
+  <!-- 11 -->
+    <div class="page" style="font-size:26px" >
+		<!--<div class="flota_d"><img class="image_expand" onclick="openImage(this)" src="images/cap1/2.jpeg" width="60%"></div>-->
+		<p>Ana regresó a su hogar en el pasado, donde su familia y amigos la recibieron con alegría. A partir de ese día, Ana se convirtió en una heroína en su pueblo, y su historia se contó de generación en generación como un ejemplo de cómo las matemáticas pueden ser utilizadas para salvar el mundo.</p>
+		
+		<p style="font-size:24px;" ><center><b>Introducción a las Operaciones Básicas</b></center></p>
+		<figure>
+        <div class="interactive" poster="posters/p20.png" width="900" height="540" scale="100%" src="interactivos/C2/operaciones/index.html"></div>
+            <figcaption prefix="Video">Operaciones básicas <a target="_blank" href="http://youtube.com/watch?v=2P2Su9VaQYI">day VB</a> de YouTube, Licencia Creative Commons).</figcaption>
+        </figure>
+	
+    </div>
+
+
+
+  <!-- 12 -->
+    <div class="page" style="background-image: url('images/c3/1.png'); background-size:170px 825px; background-position:470px 0px; background-repeat: no-repeat;">
+		<h2 id="c14" style="font-size:28px" >El enigma de la supervivencia</h2>
+		
+		<p style="width: 360px; font-size:24px">Había una vez un pequeño pueblo llamado San Cristóbal, donde vivían un grupo de estudiantes apasionados por las matemáticas. Todos los días, se reunían en el parque a compartir sus conocimientos y a resolver problemas desafiantes. Pero un día, una terrible epidemia se extendió por todo el pueblo, dejando a la población en un estado de pánico y desesperación.<br>
+		Los estudiantes se dieron cuenta de que debían hacer algo para salvar a su comunidad. Después de horas de investigación y estudio, descubrieron que la única manera de detener la epidemia era resolviendo un enigma matemático muy complejo. El enigma consistía en una ecuación con varias incógnitas y una serie de restricciones.</p>
+
+    </div>
+
+
+ <!-- 13 -->
+    <div class="page">	
+		
+		<p style="font-size:27px" >Los estudiantes se pusieron manos a la obra y comenzaron a trabajar en equipo para resolver el enigma. Utilizaron todos sus conocimientos matemáticos y trabajaron incansablemente durante días y noches. Finalmente, después de mucho esfuerzo y dedicación, lograron resolver el enigma y encontrar la solución..</p>
+		<div style="font-size:26px" ><div class="flota"><img style="margin-left: 5px; margin-top: 15px; float:left; cursor: pointer; padding-left: 18px; padding-bottom: 5px; margin-bottom: 5px; border-radius: 40px" onclick="openImage(this)" src="images/c3/2.png" width="100%"><br></div>Con la solución en sus manos, los estudiantes rápidamente la llevaron a los científicos del pueblo, quienes utilizaron la información para desarrollar una cura para la epidemia. Gracias a la valentía y el esfuerzo de los estudiantes, San Cristóbal se salvó de la devastación y la población volvió a la normalidad.</div>
+
+	</div>	
+
+<!-- 14 -->
+    <div class="page">
+		<p style="font-size:27px" >Los estudiantes se convirtieron en héroes locales y su historia se contó de generación en generación, inspirando a otros jóvenes a seguir sus pasos y a utilizar sus conocimientos para ayudar a su comunidad. Y así, el enigma de la supervivencia se convirtió en un recordatorio de que, juntos, podemos superar cualquier desafío.</p>​
+		<img class="image_expand" onclick="openImage(this)" src="images/c3/3.png" width="100%" height="50%" style="margin-top: -10px">
+	
+	</div>	
+
+
+ <!-- 15 -->
+    <div class="page">
+		<p style="font-size:20px" >El método o pasos de Polya son estrategias didácticas útiles en la resolución de problemas matemáticos:</p>
+		<figure>
+        <div class="interactive" style="border: 0px" poster="posters/p39.png" width="750" height="900" scale="100%" src="interactivos/C3/polya/index.html"></div>
+            
+        </figure>
+
+	</div>
+
+
+ <!-- 16 -->
+    <div class="page">
+		<h2 id="c15" style="font-size:30px">El maestro mágico de las matemáticas</h2>
+		<p style="font-size:23px" >Había una vez un profesor de matemáticas llamado Señor García, quien había enseñado durante años en una escuela de primaria. A pesar de su experiencia y dedicación, el Señor García se daba cuenta de que muchos de sus alumnos se aburrían en sus clases y no lograban aprender de manera efectiva.<br> El Señor García se propuso encontrar una fórmula mágica para enseñar matemáticas de manera fácil y divertida. Comenzó a investigar diferentes métodos de enseñanza y a experimentar con nuevas técnicas en su salón de clases.<br>
+		Un día, el Señor García descubrió una técnica llamada "enseñanza mediante juegos" y decidió darle una oportunidad. En su próxima clase, introdujo un juego de estrategia en el que los estudiantes debían resolver problemas matemáticos para ganar. Los estudiantes se emocionaron con el juego y se involucraron activamente en la clase. <br>
+		El Señor García continuó utilizando esta técnica y vio cómo sus alumnos comenzaban a aprender de manera más efectiva y a disfrutar de las matemáticas. Los estudiantes se volvieron más participativos, curiosos y motivados en las clases de matemáticas.</p>
+		
+	</div>	
+
+
+<!-- 17 -->
+    <div class="page">
+		<p style="font-size:26px" >El Señor García se había encontrado con la fórmula mágica para enseñar matemáticas de manera fácil y divertida. Su enfoque innovador inspiró a otros profesores a seguir sus pasos y a utilizar esta técnica en sus propias clases. El Señor García se convirtió en un maestro mágico para sus estudiantes y en un ejemplo a seguir para otros profesores.</p>​
+		<img class="image_expand" onclick="openImage(this)" src="images/c4/1.png" width="100%" height="50%" style="margin-top: -10px">
+	
+	</div>	
+
+
+<!-- 18 -->
+    <div class="page" num="" style="background-image: url('images/general/cap2b.jpg'); background-size:640px 825px; background-position:0px 0px; background-repeat: no-repeat;color: white">
+		
+
+    </div>
+
+
+
+<!-- 19 -->
+    <div class="page">
+		<h2 id="c16" style="font-size:28px" >El Pokémon Matemático: La Gran Victoria</h2>
+		<p style="font-size:24px" >Había una vez un Pokémon llamado Koffing, quien siempre había sido apasionado por las matemáticas. A menudo se pasaba horas resolviendo problemas y operaciones en su cuaderno, siempre buscando mejorar sus habilidades.</p>
+		<div class="flota_d"><img style="border-radius: 10%" onclick="openImage(this)" src="images/c5/1.png" width="100%"/></div>
+		<p style="font-size:24px" >Un día, Koffing escuchó hablar de un torneo de maestros Pokémon de resolución de problemas matemáticos que se celebraría en la ciudad cercana. Este torneo atrajo a los Pokémon más inteligentes y talentosos de toda la región, y Koffing sabía que era su oportunidad de demostrar su habilidad en las matemáticas.<br>
+		Sin pensarlo dos veces, Koffing se inscribió en el torneo y comenzó a entrenar con todas sus fuerzas. Pasó días y noches estudiando y practicando, resolviendo problemas cada vez más difíciles y complejos.</p>
+	
+    </div>
+
+
+<!-- 20 -->
+    <div class="page">
+		
+		<p style="font-size:28px" >Finalmente, llegó el gran día del torneo. Koffing se presentó con confianza, listo para demostrar lo que había aprendido. En la primera ronda, Koffing resolvió problemas de números primos y ecuaciones lineales con facilidad, impresionando a todos los demás participantes y al jurado.</p>
+		<p><div class="flota"><img style="margin-left: 5px; margin-top: 12px; float:left; cursor: pointer; padding-left: 18px; padding-bottom: 5px" onclick="openImage(this)" src="images/c5/2.png" width="100%"></p><br></div><p style="font-size:28px" >En las siguientes rondas, Koffing se enfrentó a desafíos aún más difíciles, pero gracias a su dedicación y esfuerzo, logró superar cada uno de ellos con éxito. Finalmente, llegó a la ronda final, enfrentándose al Pokémon más talentoso de todos: un Alakazam.</p>
+
+	</div>
+	
+	
+	 <!-- 21 -->
+    <div class="page" style="background-image: url('images/c5/3.png');  background-position:0px 625px; background-repeat: no-repeat;">
+		<p style="font-size:29px"  >El desafío final consistió en resolver un problema de cálculo integral en un tiempo límite. Koffing y Alakazam trabajaron con rapidez y precisión, pero al final, fue Koffing quien logró resolver el problema primero.</p>
+		<p style="font-size:29px" >La multitud estalló en aplausos y vítores mientras Koffing era coronado como el Pokémon maestro de matemáticas. Koffing estaba muy emocionado y agradecido por haber ganado el torneo, pero lo más importante para él fue haber demostrado que con dedicación y esfuerzo, se pueden alcanzar los sueños más grandes.</p>
+		
+		
+		</div>
+	
+	
+	
+
+    <!-- 22 -->
+    <div class="page" style="font-size:22px">
+		<h2 id="c17"><center>Geométrico: El niño inventor</center> </h2>
+		<div class="flota_d" ><img class="image_expand" onclick="openImage(this)" src="images/c6/1.png" width="75%"></div>
+		<p>Había una vez un niño llamado Juan, que siempre había soñado con ser un superhéroe. Él quería ayudar a las personas y combatir la delincuencia en su ciudad, pero sabía que necesitaba algo especial para hacerlo. Un día, mientras estaba en la clase de matemáticas, aprendió sobre geometría, áreas y volúmenes de figuras geométricas. Juan se dio cuenta de que estos conocimientos podrían ayudarlo a construir el super traje que necesitaba.</p>
+		
+		<p>Con la ayuda de su profesor de matemáticas, Juan comenzó a dibujar planos y diseños para su traje. Utilizó sus conocimientos de geometría para calcular el área y el volumen de las diferentes partes del traje, para asegurarse de que todo encajara perfectamente. Juan trabajó incansablemente en su proyecto, pasando todas sus tardes y fines de semana en el taller de su padre. Finalmente, después de varios meses, su traje estaba listo.</p>	
+	
+    </div>	
+	
+    <!-- 23 -->
+    <div class="page"style="font-size:24px"  >
+	
+		<p>El traje de Juan tenía una capa especial que podía cambiar de color según la situación, un casco con visión nocturna y unos botones que le permitían volar y correr más rápido de lo normal. Juan estaba emocionado de probar su traje. Una noche, mientras caminaba por la calle, Juan vio a unos delincuentes robando una tienda. Sin pensarlo dos veces, Juan se puso su traje y salió a enfrentarse a ellos.</p>
+		<div class="flota_d"><img class="image_expand" onclick="openImage(this)" src="images/c6/2.png" width="75%"></div>
+		<p>La lucha fue difícil, pero con la ayuda de su traje, Juan logró derrotar a los delincuentes y recuperar el dinero robado. Los transeúntes y la policía lo aplaudieron por su valentía. A partir de ese día, Juan se convirtió en un superhéroe de verdad, y utilizó sus conocimientos matemáticos para ayudar a la gente y combatir la delincuencia en su ciudad.</p>
+	
+    </div>
+
+    <!-- 24 -->
+    <div class="page" style="font-size:22px" >
+		
+		<div class="flota_d"><img class="image_expand" onclick="openImage(this)" src="images/c6/3.png" width="100%"></div>
+		<p>La gente comenzó a llamarlo "El Geométrico" y su fama se extendió por toda la ciudad. Los niños querían ser como él y los adultos lo admiraban por su inteligencia y coraje. Juan se convirtió en un héroe local, y su historia inspiró a muchas personas a utilizar sus conocimientos para hacer el bien en el mundo.<br>
+		Desde entonces, Juan sigue siendo un superhéroe y usando su inteligencia matemática para combatir la delincuencia y ayudar a la gente, siendo un ejemplo para todos de cómo la educación y el conocimiento pueden ser herramientas poderosas para hacer un cambio positivo en el mundo. Con el tiempo, Juan decidió compartir sus conocimientos con otros jóvenes, y comenzó a dar talleres y clases de matemáticas para niños en riesgo de caer en la delincuencia. Él les enseñaba cómo utilizar sus habilidades matemáticas para construir y diseñar cosas útiles, y les mostraba cómo su educación podría ayudarles a tener un futuro mejor.
+		
+		</p>		
+		
+	
+    </div>
+
+    <!-- 25 -->
+    <div class="page" style="font-size:22px" >
+		
+		<p>Los niños se sintieron inspiradosy se enorgullecieron de sus habilidades matemáticas. Muchos de ellos comenzaron a verlas como algo valioso y útil, y muchos incluso decidieron estudiar carreras científicas.<br>
+		Juan se convirtió en un verdadero héroe para estos niños, y su legado vivirá por siempre en su ciudad. A través de su ejemplo, él les enseñó que con dedicación, trabajo duro y la aplicación de sus conocimientos, cualquier persona puede ser un héroe y hacer una diferencia en el mundo.</p>
+		
+		<p style="font-size:24px;" ><center><b>¿Qué son los Perímetros y las Áreas?</b></center></p>
+		<figure>
+        <div class="interactive" poster="posters/p30.png" width="900" height="540" scale="100%" src="interactivos/C6/geometria/index.html"></div>
+            <figcaption prefix="Video">Perímetros y áreas <a target="_blank" href="https://youtu.be/-FvTH9sdL3Q">Aula 365</a> de YouTube, Licencia Creative Commons).</figcaption>
+        </figure>
+	
+    </div>
+
+
+<!-- Conclusión -->
+      <div class="page">
+        <h1 id="conclusion"><center>Conclusión</center></h1>
+       <p style="font-size:20px"><b><i>El cuento y el juego son herramientas valiosas en el aprendizaje de la matemática. A través de historias y juegos, los estudiantes pueden relacionar los conceptos matemáticos con situaciones y problemas cotidianos, lo que los ayuda a comprender mejor los conceptos y aplicarlos en contextos reales. Además, el uso de cuentos y juegos en el aula puede mejorar la motivación y el interés de los estudiantes en la matemática. Los cuentos pueden proporcionar un contexto para la enseñanza de conceptos matemáticos complejos, como el cálculo. Por ejemplo, un cuento sobre un personaje que viaja a través de un laberinto puede ayudarlos a comprender cómo se pueden utilizar las ecuaciones para encontrar la ruta más corta. Los juegos, por otro lado, pueden proporcionar un ambiente lúdico y desafiante para practicar y aplicar los conceptos matemáticos aprendidos. Además, el juego y el cuento son una excelente forma de fomentar la colaboración y la comunicación entre los estudiantes, ya que a menudo se requiere que trabajen en equipo para resolver problemas y completar tareas. Esto puede ayudar a desarrollar habilidades sociales y de liderazgo, lo que es esencial para su éxito tanto en la escuela como en la vida profesional.<br>
+	   En resumen, el uso de cuentos y juegos en el aprendizaje de la matemática puede mejorar la comprensión y la aplicación de los conceptos matemáticos, aumentar la motivación y el interés de los estudiantes, y fomentar la colaboración y la comunicación entre ellos. Los profesores deberían considerar la incorporación de estas herramientas en su enseñanza para mejorar la efectividad y la eficiencia del aprendizaje de la matemática.</i></b></p>
+		
+
+      </div>
+
+
+<div class="page" num="" style="display:flex; align-items:center; justify-content:center;">
+		<img style="width:80%" src="images/general/img01.jpg" width="100%">
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  	
+	
+	
+	
+      <!--  -->
+      <div class="page invertcolor" num="" style="background-image: radial-gradient(white, #ecf0f1, #e3e5e7); display:flex; align-items:center; justify-content:center;">
+          <a style="width:50%" target="_blank" href="http://descartes.matem.unam.mx/"><img src="images/general/logo_descartes.svg" width="100%"></a>
+        </div>
+      </div>
+
+    <!-- [cierra] pages_container -->
+    </div>
+  <!-- [cierra] book_container -->
+  </div>
+
+</body>
+</html>
