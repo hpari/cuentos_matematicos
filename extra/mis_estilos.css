@@ -1,0 +1,300 @@
+.caja0 {
+  background-color: Lavender;
+  width: 300px;
+  border: 5px solid DarkViolet;
+  padding: 30px;
+} 
+
+
+.caja1 {
+	font-size: 22px;
+	text-align: center;
+	padding: 25px;
+	margin: 20px;
+	box-shadow: 6px 6px 10px #c2c2c2; 
+	width: 70%;
+	background-color: hsl(250 10% 90%);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.flota {
+	float: right;
+  
+  margin: -12px 0 -18px -15px;
+  padding: 0px;
+  border: 1px solid rgba(1,1,1,0);
+  text-align: center;
+  width: 60%;
+}
+
+.flota2 {
+	float: left;
+  
+  margin: -12px -15px -10px -15px;
+  padding: 5px;
+  border: 1px solid rgba(1,1,1,0);
+  text-align: center;
+  width: 100%;
+}
+
+/* Incorporación de imagen flotando a la izquierda o derecha, se diseñó para ocupar un ancho del 50%, con ancho de imagen del 100% (para valores menores, hay que poner un estilo que modifique las márgenes */
+.flota_i {
+	float: left;
+    margin: 0px 10px -15px -5px;
+	padding: 5px;
+	border: 1px solid rgba(1,1,1,0);
+	width: 50%;
+	
+}
+
+.flota_i .figcaption {
+	text-align: center;
+}
+
+.flota_d {
+	float: right;
+    margin: 0px -10px 0px 15px;
+	padding: 5px;
+	border: 1px solid rgba(1,1,1,0);
+	width: 50%;
+	
+}
+
+.flota_d .figcaption {
+	text-align: center;
+}
+
+body.dark .caja1 {
+	background-color: hsl(250 10% 10%);
+	color: #cccccc;
+}
+
+.caja2 {
+	width: 60%;
+	background-color: Cornsilk;
+    box-shadow: 6px 6px 10px #000;
+    border-radius: 20px;
+    padding: 25px;
+	padding-top:15px;
+	padding-bottom:10px;
+	font-size: 22px;
+	color:black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body.dark .caja2 {
+	background-color: rgba(50,250,250,0.75);
+	color: white;
+}
+
+.caja3 {
+	width: 500px;
+	height: 330px;
+	background-image: url("../images/fondo1.jpg");
+	background-repeat: no-repeat;
+    box-shadow: 6px 6px 10px #000;
+    border-radius: 20px;
+    padding: 25px;
+	padding-top:15px;
+	padding-bottom:10px;
+	font-size: 28px;
+	color:white;
+    margin-left: auto;
+    margin-right: auto;
+	text-align: center;
+	text-shadow: 2px 1px black;
+}
+
+.caja4 {
+  background: rgba(200,200,200,0.5);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0.65em 0;
+  width:80%;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-color);
+}
+
+ .caja4 h1 {
+ color:white;
+ background: hsl(150 80% 40%);
+ padding:5px 0px 15px 0px;
+ margin:0;
+ text-shadow: 2px 2px 5px black;
+ text-align: center;
+ }  
+
+ .caja4 .contenido {
+ padding: 0 1rem;
+ 
+ 
+ }
+
+.caja5 {
+  width: 50%;
+  background-image: url("../images/ejercicios.png");
+  background-repeat: no-repeat; 
+  background-color: rgba(200,200,200,0.45);
+  box-shadow: 6px 6px 10px #000;
+  border-radius: 10px;
+  padding: 25px;
+  padding-top: 70px;
+  font-size: 20px;
+}
+
+.caja6 {
+  margin:30px 0px;
+  background-image: url("../images/ejemplo.png");
+  background-repeat: no-repeat; 
+  background-color: rgba(250,250,250,0.15);
+  box-shadow: 6px 6px 10px #000;
+  border-radius: 10px;
+  padding: 25px;
+  padding-top: 70px;
+  padding-bottom: 10px;
+  font-size: 20px;
+}
+
+.caja7 {
+  margin:30px 0px;
+  background: linear-gradient(to top right, red,yellow, green, blue);
+  box-shadow: 6px 6px 10px #000;
+  border-radius: 15px;
+  padding: 10px;
+  font-size: 24px;
+  color: white;
+  text-shadow: 2px 1px 5px black;
+}
+
+.lista1 li {
+  list-style: outside url("listas/mariposa.png");
+  }
+  
+.lista2 li {
+  list-style: none;
+  background-image: url("listas/arana1.png");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 25px;
+  padding-left: 30px;
+  margin-left:-20px;
+  padding-top:0px;
+    
+  }
+  
+.lista3 li {
+  list-style: none;
+  background-image: url("listas/arana2.png");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 25px;
+  background-position: left center;
+  padding-left: 30px;
+  padding-top:5px;
+    
+  }
+  
+.lista4 li {
+  list-style: none;
+  background-image: url("listas/arana3.png");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 20px;
+  padding-left: 30px;
+    
+  }
+  
+  .lista5 li {
+  list-style: none;
+  background-image: url("listas/arana4.png");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 25px;
+  padding-left: 30px;
+  margin-left:-20px;
+  padding-top:5px;
+    
+  }
+  
+.foto {
+clip-path: circle(50%);
+}
+
+
+.foto2 {
+clip-path: circle(150px at 50% 150px);
+}
+
+.foto3 {
+float: left;
+background: url(../images/fondo1.jpg);
+shape-outside: circle(100px at 0px 100px);
+}
+
+figcaption {
+	margin-top: 10px;
+	
+}
+
+img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+/* Estilos para la etiqueta audio */
+
+/* Estilos audio1 */
+
+/* centrado */
+.audio1 {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Color del fondo */
+.audio1::-webkit-media-controls-panel {
+  background-color: #56AEFF;
+}
+
+.audio1::-webkit-media-controls-timeline {
+  background-color: #B1D4E0;
+  border-radius: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Estilo para el botón play */	
+.audio1::-webkit-media-controls-play-button {
+  background-color: #B1D4E0;
+  border-radius: 50%;
+}
+.audio1::-webkit-media-controls-play-button:hover {
+  background-color: rgba(177,212,224, .7);
+}
+
+/* Estilo para el tiempo transcurrido */
+.audio1::-webkit-media-controls-current-time-display {
+  color: #fff;
+}
+
+
+/* Estilos audio2, cambiando solo el color de fondo y centrado*/
+
+/* Centrado */
+.audio2 {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Color del fondo */
+.audio2::-webkit-media-controls-panel {
+  background-color: orange;
+}
+
